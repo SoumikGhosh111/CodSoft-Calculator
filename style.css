@@ -34,6 +34,7 @@ body img{
     box-shadow: 2px 5px 25px 5px lightblue;
     border-radius: 25px;
     position: absolute;
+    border: 1px solid white;
 }
 .output{ 
     height: 50px;
@@ -48,6 +49,7 @@ body img{
     font-weight: 600;
     overflow: hidden;
     border-radius: 10px;
+    color: rgb(97, 97, 97);
 }
 .grid{ 
     display: grid;
@@ -115,8 +117,12 @@ body img{
 .q{ 
     grid-area: q;
 }
+.button{ 
+    border-radius: 50%;
+    /* background-color: red; */
+}
 .grid button{ 
-    width: 50px;
+    width: 100%;
     height: 50px;
     border-radius: 50%;
     box-shadow: 2px 5px 10px grey;
@@ -136,6 +142,7 @@ body img{
     /* box-shadow: 2px 5px 10px grey; */
     display: flex;
     justify-content: space-around;
+    /* background-color: red; */
 }
 .ac-equal-buttons button{ 
     width: 40%;
@@ -148,15 +155,17 @@ body img{
     font-weight: 600;
     color: rgb(97, 97, 97);
 }
+
 button{ 
-    transition: all 0.5s ease-in-out;
+    transition: all 0.4s ease-in;
     /* font-family: 'Handjet', cursive; */
     font-family: 'Rubik', sans-serif;
 }
 button:hover{ 
     /* background-color: rgb(176, 234, 255); */
-    background-color: rgb(192, 239, 255);
-    color: black; 
+    /* background-color: rgb(192, 239, 255); */
+    color: rgb(192, 239, 255); 
+    background-color: rgb(0, 0, 0);
 }
 .symbol button{ 
     font-size: 30px;
