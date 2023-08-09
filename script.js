@@ -2,24 +2,45 @@ let output = "";
 let buttons = document.querySelectorAll('.button'); 
 Array.from(buttons).forEach(button => {
     button.addEventListener('click', (e)=>{
+         
         if( e.target.innerHTML == '='){ 
             output = eval(output);
             document.querySelector('.output').innerHTML = output;  
         }
         else if( e.target.innerHTML == "AC"){ 
-            output = ""
+            output = "";
             document.querySelector('.output').innerHTML = output;  
         }
         else if( e.target.innerHTML == '×'){ 
+            let lastChar = output.charAt(output.length-1);
+            if(lastChar == '*' || lastChar == '-' || lastChar == '+' || lastChar == '/'){ 
+                output = output.substring(0, output.length-1); 
+            }
             output = output + "*"; 
             document.querySelector('.output').innerHTML = output;  
         }
         else if( e.target.innerHTML == '−'){ 
-            output = output + "-"; 
+            let lastChar = output.charAt(output.length-1);
+            if(lastChar == '*' || lastChar == '-' || lastChar == '+' || lastChar == '/'){ 
+                output = output.substring(0, output.length-1); 
+            }
+            output = output + '-'; 
             document.querySelector('.output').innerHTML = output;  
         }
-        else if( e.target.innerHTML == '÷'){ 
+        else if( e.target.innerHTML == '÷'){
+            let lastChar = output.charAt(output.length-1); 
+            if(lastChar == '*' || lastChar == '-' || lastChar == '+' || lastChar == '/'){ 
+                output = output.substring(0, output.length-1); 
+            }
             output = output + "/"; 
+            document.querySelector('.output').innerHTML = output;  
+        }
+        else if( e.target.innerHTML == '+'){
+            let lastChar = output.charAt(output.length-1); 
+            if(lastChar == '*' || lastChar == '-' || lastChar == '+' || lastChar == '/'){ 
+                output = output.substring(0, output.length-1); 
+            }
+            output = output + "+"; 
             document.querySelector('.output').innerHTML = output;  
         }
         else if( e.target.innerHTML == 'C'){ 
@@ -27,9 +48,9 @@ Array.from(buttons).forEach(button => {
             document.querySelector('.output').innerHTML = output;  
         }
        else{ 
-        let num = e.target.innerHTML
-        output = output + num; 
-        document.querySelector('.output').innerHTML = output; 
+            let num = e.target.innerHTML; 
+            output = output + num; 
+            document.querySelector('.output').innerHTML = output; 
        }
     }); 
 });
