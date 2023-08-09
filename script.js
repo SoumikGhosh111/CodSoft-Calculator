@@ -27,7 +27,8 @@ Array.from(buttons).forEach(button => {
             document.querySelector('.output').innerHTML = output;  
         }
        else{ 
-        output = output + e.target.innerHTML; 
+        let num = e.target.innerHTML
+        output = output + num; 
         document.querySelector('.output').innerHTML = output; 
        }
     }); 
